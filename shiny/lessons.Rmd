@@ -9,6 +9,8 @@ output: html_document
 - [Shiny home page](https://shiny.rstudio.com)
 - [Shiny gallery](https://shiny.rstudio.com/gallery/)
 - [Shiny tutorials](https://shiny.rstudio.com/tutorial/)
+- [Shiny function reference](https://shiny.rstudio.com/reference/shiny/1.0.5/)
+- [Shiny articels](https://shiny.rstudio.com/articles/)
 
 ## Shiny in Rmarkdown documnents
 
@@ -81,7 +83,7 @@ shinyAppDir(
 )
 ```
 
-## Linking inouts to outputs
+## Linking inputs to outputs
 
 
 ```{r outputs, echo=FALSE}
