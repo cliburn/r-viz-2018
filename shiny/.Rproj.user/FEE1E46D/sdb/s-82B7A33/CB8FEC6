@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Series of shiny examples\"\nruntime: shiny\noutput: html_document\n---\n\n## The simplest shiny app\n\n```{r tabsets, echo=FALSE}\nshinyAppDir(\n  \"../01_single_file\",\n    options = list(\n    width = \"100%\", height = 550\n  )\n)\n```\n\nNote the use of the `height` parameter to determine how much vertical space the embedded application should occupy.\n\nYou can also use the `shinyApp` function to define an application inline rather then in an external directory.\n\nIn all of R code chunks above the `echo = FALSE` attribute is used. This is to prevent the R code within the chunk from rendering in the document alongside the Shiny components.\n\n\n\n",
+    "created" : 1521548359042.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "138629184",
+    "id" : "CB8FEC6",
+    "lastKnownWriteTime" : 1521549671,
+    "last_content_update" : 1521549671212,
+    "path" : "~/_teach/df2017_workshops/viz/shiny/00_document/lessons.Rmd",
+    "project_path" : "00_document/lessons.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

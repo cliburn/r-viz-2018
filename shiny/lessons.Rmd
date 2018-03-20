@@ -1,0 +1,158 @@
+---
+title: "Baiscs of shiny"
+runtime: shiny
+output: html_document
+---
+
+## Resources
+ 
+- [Shiny home page](https://shiny.rstudio.com)
+- [Shiny gallery](https://shiny.rstudio.com/gallery/)
+- [Shiny tutorials](https://shiny.rstudio.com/tutorial/)
+
+## Shiny in Rmarkdown documnents
+
+### An interactive table
+
+```{r iris, echo=FALSE}
+renderDataTable(iris, 
+                options = list(pageLength = 10))
+```
+
+### Linking inputs and plots
+
+```{r eruptions, echo=FALSE}
+inputPanel(
+  selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20),
+  
+  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+)
+
+renderPlot({
+  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+  
+  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+  lines(dens, col = "blue")
+})
+```
+
+## Single file app
+
+```{r sungle, echo=FALSE}
+shinyAppDir(
+  "01_single_file/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+```{r single_code, results='asis'}
+library(shiny)
+
+ui <- fluidPage()
+server <- function(input, output) {}
+
+shinyApp(ui, server)
+```
+
+## Multifile app
+
+```{r multi, echo=FALSE}
+shinyAppDir(
+  "02_multi_file/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+## Getting inputs
+
+```{r inputs, echo=FALSE}
+shinyAppDir(
+  "03_inputs/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+## Linking inouts to outputs
+
+
+```{r outputs, echo=FALSE}
+shinyAppDir(
+  "04_io/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+
+## Reacting to user inputs
+
+
+```{r reactive, echo=FALSE}
+shinyAppDir(
+  "05_reactive/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+
+## Mouse events
+
+
+```{r mouse, echo=FALSE}
+shinyAppDir(
+  "06_mouse/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+## Layout
+
+
+```{r layouts, echo=FALSE}
+shinyAppDir(
+  "07_layout/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+
+## Strings
+
+
+```{r string, echo=FALSE}
+shinyAppDir(
+  "08_aes_string/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+
+## Styling
+
+
+```{r styling, echo=FALSE}
+shinyAppDir(
+  "09_styling/",
+  options = list(
+    width = "100%", height = 550
+  )
+)
+
+
+

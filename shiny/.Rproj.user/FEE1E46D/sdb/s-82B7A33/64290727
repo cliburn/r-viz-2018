@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521551886777.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "64290727",
+    "lastKnownWriteTime" : 1521495572,
+    "last_content_update" : 1521495572,
+    "path" : "~/_teach/df2017_workshops/viz/shiny/05_reactive/globals.R",
+    "project_path" : "05_reactive/globals.R",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

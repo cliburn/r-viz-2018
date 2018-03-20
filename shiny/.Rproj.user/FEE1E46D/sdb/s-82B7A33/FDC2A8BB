@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\nlibrary(ggplot2)\nlibrary(dplyr)\n\nserver <- function(input, output) {\n\n    # reactive objects get updated only when the input value(s) it uses changes\n    data <- reactive({\n      n <- input $n\n      data.frame(x=rnorm(n))\n    })\n    \n    # invalidate later triggers an update at regular intervals\n    time <- reactive({\n      invalidateLater(1000)\n      Sys.time()\n    })\n  \n    output$time <- renderPrint(time())\n    \n    output$hist <- renderPlot({\n    df <- data()\n    g <- ggplot(df, aes(x=x)) + \n      geom_histogram(bins=nrow(df)/5) +\n      geom_vline(xintercept = mean(df$x), color=\"red\")\n    g\n  })\n  \n  output$table <- renderTable({\n    df <- data()\n    df %>% summarise(mean=mean(x), median=median(x), sd=sd(x))\n  })\n}\n",
+    "created" : 1521551888110.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2442305342",
+    "id" : "FDC2A8BB",
+    "lastKnownWriteTime" : 1521495572,
+    "last_content_update" : 1521495572,
+    "path" : "~/_teach/df2017_workshops/viz/shiny/05_reactive/server.R",
+    "project_path" : "05_reactive/server.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
